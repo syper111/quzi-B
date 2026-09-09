@@ -84,13 +84,6 @@
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 0 20px rgba(0, 243, 255, 0.12);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .welcome-badge-box:hover {
-            border-color: var(--neon-purple);
-            box-shadow: 0 0 25px rgba(176, 0, 255, 0.25);
-            transform: translateY(-3px);
         }
 
         #welcome-screen h1 {
@@ -98,7 +91,6 @@
             color: var(--neon-cyan);
             margin-bottom: 8px;
             text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
-            line-height: 1.4;
         }
 
         #welcome-screen h2 {
@@ -125,17 +117,12 @@
             box-shadow: 0 0 20px rgba(0, 243, 255, 0.35);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             width: 100%;
-            letter-spacing: 0.5px;
         }
 
         .btn-main:hover {
             box-shadow: 0 0 30px var(--neon-cyan);
             transform: translateY(-2px);
             filter: brightness(1.1);
-        }
-
-        .btn-main:active {
-            transform: scale(0.97);
         }
 
         #quiz-section {
@@ -174,7 +161,6 @@
             flex: 1;
             text-align: center;
             font-weight: 700;
-            box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
         }
 
         header h1 {
@@ -204,13 +190,7 @@
             background-size: 200% 100%;
             width: 0%;
             transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            animation: pulseGlow 2s infinite linear;
             box-shadow: 0 0 12px var(--neon-cyan);
-        }
-
-        @keyframes pulseGlow {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
         }
 
         .question-card {
@@ -223,12 +203,6 @@
             opacity: 0;
             transform: translateY(15px);
             animation: slideUpCard 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .question-card:hover {
-            border-color: rgba(0, 243, 255, 0.3);
-            box-shadow: 0 4px 20px rgba(0, 243, 255, 0.08);
         }
 
         @keyframes slideUpCard {
@@ -248,13 +222,12 @@
 
         .q-weight {
             font-size: 10px;
-            background: rgba(176, 0, 255, 0.15);
-            color: #d8b4fe;
-            border: 1px solid var(--neon-purple);
+            background: rgba(0, 243, 255, 0.15);
+            color: var(--neon-cyan);
+            border: 1px solid var(--neon-cyan);
             padding: 3px 10px;
             border-radius: 20px;
             white-space: nowrap;
-            box-shadow: 0 0 8px rgba(176, 0, 255, 0.25);
         }
 
         .options-list {
@@ -278,27 +251,10 @@
             overflow: hidden;
         }
 
-        .option-label::before {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: 3px;
-            background: var(--neon-cyan);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
         .option-label:hover {
             background: rgba(30, 41, 59, 0.9);
             border-color: var(--neon-cyan);
             transform: translateX(-4px);
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.15);
-        }
-
-        .option-label:hover::before {
-            opacity: 1;
         }
 
         .option-label input[type="radio"] {
@@ -311,10 +267,8 @@
             margin-left: 12px;
             outline: none;
             cursor: pointer;
-            display: inline-block;
             position: relative;
             background: rgba(15, 23, 42, 0.5);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             flex-shrink: 0;
         }
 
@@ -333,7 +287,6 @@
             height: 8px;
             background: var(--neon-cyan);
             border-radius: 50%;
-            box-shadow: 0 0 6px var(--neon-cyan);
         }
 
         .en-text {
@@ -349,46 +302,12 @@
             border-color: var(--neon-green) !important;
             background: rgba(0, 255, 102, 0.1) !important;
             color: var(--neon-green);
-            box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
-        }
-
-        .correct-ans::before {
-            background: var(--neon-green);
-            opacity: 1;
-        }
-
-        .correct-ans input[type="radio"] {
-            border-color: var(--neon-green);
-            background: rgba(0, 255, 102, 0.2);
-            box-shadow: 0 0 10px var(--neon-green);
-        }
-
-        .correct-ans input[type="radio"]::after {
-            background: var(--neon-green);
-            box-shadow: 0 0 6px var(--neon-green);
         }
 
         .wrong-ans {
             border-color: var(--neon-pink) !important;
             background: rgba(255, 0, 85, 0.1) !important;
             color: var(--neon-pink);
-            box-shadow: 0 0 15px rgba(255, 0, 85, 0.2);
-        }
-
-        .wrong-ans::before {
-            background: var(--neon-pink);
-            opacity: 1;
-        }
-
-        .wrong-ans input[type="radio"] {
-            border-color: var(--neon-pink);
-            background: rgba(255, 0, 85, 0.2);
-            box-shadow: 0 0 10px var(--neon-pink);
-        }
-
-        .wrong-ans input[type="radio"]::after {
-            background: var(--neon-pink);
-            box-shadow: 0 0 6px var(--neon-pink);
         }
 
         #result-box {
@@ -399,23 +318,14 @@
             backdrop-filter: blur(20px);
             border-radius: 20px;
             border: 2px solid var(--neon-cyan);
-            box-shadow: 0 0 35px rgba(0, 243, 255, 0.3), inset 0 0 15px rgba(0, 243, 255, 0.1);
+            box-shadow: 0 0 35px rgba(0, 243, 255, 0.3);
             margin-top: 20px;
-            animation: cyberCardPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            position: relative;
-            overflow: hidden;
-        }
-
-        @keyframes cyberCardPop {
-            0% { opacity: 0; transform: scale(0.9) translateY(30px); filter: brightness(1.5); }
-            100% { opacity: 1; transform: scale(1) translateY(0); filter: brightness(1); }
         }
 
         #result-box h2 {
             color: var(--neon-cyan);
             font-size: 22px;
             margin-bottom: 10px;
-            text-shadow: 0 0 12px rgba(0, 243, 255, 0.6);
         }
 
         .badge-tag {
@@ -427,7 +337,6 @@
             border-radius: 20px;
             font-size: 12px;
             margin-bottom: 16px;
-            box-shadow: 0 0 12px rgba(0, 255, 102, 0.25);
             font-weight: 700;
         }
 
@@ -458,7 +367,6 @@
             color: var(--neon-cyan);
         }
 
-        /* تنسيق قسم عرض الأخطاء والحلول بالتفصيل */
         .mistakes-review-container {
             text-align: right;
             background: rgba(255, 0, 85, 0.05);
@@ -502,7 +410,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--text-muted);
             font-size: 11px;
-            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -515,7 +422,7 @@
                 <h1>امتحان مادة النمذجة (الهدف ب)</h1>
                 <h2>الصف العاشر - المستوى الثاني</h2>
             </div>
-            <p>مرحباً بك في بيئة الاختبار المستقبلية المتقدمة! سيتم تقييمك عبر 30 سؤالاً، وعند الانتهاء ستظهر لك النتيجة الأولى، ثم تخوض جولة تدارك الأخطاء لتظهر لك النتيجة النهائية مع تقرير مفصل بالأخطاء والحلول.</p>
+            <p>الاتحان يتكون من 25 سؤالاً، وكل سؤال بـ علامتان ليصبح المجموع من 50. بعد اعتماد الإجابات يمكنك تدارك الأخطاء لمعرفة الإجابات الصحيحة.</p>
             <button type="button" class="btn-main" onclick="startQuiz()">ابدأ الامتحان الآن</button>
         </div>
 
@@ -524,10 +431,10 @@
             <header>
                 <div class="header-info-box">
                     <div class="info-pill">الصف العاشر</div>
-                    <div class="info-pill">المستوى الثاني</div>
+                    <div class="info-pill">المستوى الثاني (25 سؤالاً)</div>
                 </div>
                 <h1 id="section-title">امتحان مادة النمذجة (الهدف ب)</h1>
-                <p id="section-subtitle">الأسئلة الأساسية (30 سؤالاً)</p>
+                <p id="section-subtitle">الأسئلة الأساسية (25 سؤالاً - كل سؤال علامتان)</p>
             </header>
             <div class="progress-bar-container">
                 <div class="progress-bar" id="progressBar"></div>
@@ -538,7 +445,7 @@
                 <button type="button" class="btn-main" id="submitBtn" onclick="processSubmissions()" style="margin-top: 15px;">اعتماد الإجابات وعرض النتيجة الأولى</button>
             </form>
 
-            <!-- شاشة نتائج على شكل "لوحة إنجاز رقمية" -->
+            <!-- شاشة النتائج -->
             <div id="result-box">
                 <h2 id="result-box-title">بطاقة إنجاز رقمية</h2>
                 <div class="badge-tag" id="status-badge">تم إكمال التصحيح بنجاح</div>
@@ -554,7 +461,6 @@
                     </div>
                 </div>
 
-                <!-- صندوق عرض الأسئلة الخاطئة والحلول الصحيحة -->
                 <div id="mistakes-review-box" class="mistakes-review-container" style="display: none;">
                     <h3>سجل الأخطاء والأسئلة التي أخطأت فيها:</h3>
                     <div id="mistakes-list-content"></div>
@@ -565,44 +471,39 @@
             </div>
         </div>
 
-        <!-- الفوتر -->
         <footer>
             إعداد: المهندس ابراهيم المدادحه
         </footer>
     </div>
 
     <script>
+        // تم اختيار واختصار الأسئلة لتصبح تماماً 25 سؤالاً
         const originalQuizData = [
             { id: 1, weight: 2, question: "ما الفائدة الأساسية من استخدام برامج جداول البيانات (Excel)؟", options: ["تعديل وتصميم الصور الثابتة.", "حفظ وإعادة حساب الأرقام والنتائج تلقائياً وبسرعة.", "كتابة المقالات الطويلة وتنسيقها.", "تصفح مواقع الإنترنت المختلفة."], correct: 1 },
-            { id: 2, weight: 1, question: "ماذا يقصد بمصطلح المدخلات (Inputs) في النماذج؟", options: ["البيانات الأولية والمتغيرة مثل التكاليف وأسعار البيع.", "الرسوم البيانية المرسومة في النهاية.", "الأخطاء البرمجية التي تظهر للمستخدم.", "الشاشات والتقارير المطبوعة."], correct: 0 },
+            { id: 2, weight: 2, question: "ماذا يقصد بمصطلح المدخلات (Inputs) في النماذج؟", options: ["البيانات الأولية والمتغيرة مثل التكاليف وأسعار البيع.", "الرسوم البيانية المرسومة في النهاية.", "الأخطاء البرمجية التي تظهر للمستخدم.", "الشاشات والتقارير المطبوعة."], correct: 0 },
             { id: 3, weight: 2, question: "ما هي المخرجات (Outputs) في النماذج الرياضية؟", options: ["الأزرار واللوحات الجانبية.", "النتائج النهائية والتقارير المحسوبة بناءً على المدخلات.", "أخطاء البرمجة.", "الأسماء والرموز النصية."], correct: 1 },
             { id: 4, weight: 2, question: "ما هي الصيغة الصحيحة لكتابة دالة الجمع في برنامج إكسل؟", options: ["TOTAL(A1:A5)", "<span class='en-text'>=SUM(A1:A5)</span>", "<span class='en-text'>SUM(A1:A5)=</span>", "<span class='en-text'>ADD(A1:A5)</span>"], correct: 1 },
             { id: 5, weight: 2, question: "أي من الدوال التالية تُستخدم لإيجاد المتوسط الحسابي (المعدل)؟", options: ["<span class='en-text'>COUNT</span>", "<span class='en-text'>MAX</span>", "<span class='en-text'>AVERAGE</span>", "<span class='en-text'>SUM</span>"], correct: 2 },
             { id: 6, weight: 2, question: "ما هي الدالة المسؤولة عن إيجاد أعلى (أكبر) قيمة في مجموعة خلايا؟", options: ["<span class='en-text'>MIN</span>", "<span class='en-text'>TOP</span>", "<span class='en-text'>MAX</span>", "<span class='en-text'>HIGH</span>"], correct: 2 },
             { id: 7, weight: 2, question: "ما هي الدالة التي تستخدم لحساب عدد الخلايا التي تحتوي على أرقام؟", options: ["<span class='en-text'>COUNT</span>", "<span class='en-text'>SUM</span>", "<span class='en-text'>IF</span>", "<span class='en-text'>COUNTA</span>"], correct: 0 },
             { id: 8, weight: 2, question: "ماذا تفعل رموز علامة الدولار مثل <span class='en-text'>$A$1</span> في المعادلات؟", options: ["تحويل العملة إلى دولار أمريكي.", "تثبيت الخلية (مرجع مطلق) لكي لا تتغير عند سحب المعادلة.", "حماية الملف بالكامل برقم سري.", "إخفاء محتوى الخلية المحددة."], correct: 1 },
-            { id: 9, weight: 1, question: "ماذا يسمى المرجع الذي يتغير تلقائياً عند نسخ المعادلة لخلية جديدة؟", options: ["المرجع النسبي (Relative Reference)", "المرجع الثابت المطلق", "المرجع المخفي", "المرجع الخارجي"], correct: 0 },
-            { id: 10, weight: 2, question: "ما هو الغرض الأساسي من استخدام دالة الشرط <span class='en-text'>IF</span>؟", options: ["حذف البيانات المكررة تلقائياً.", "ترتيب الأسماء والبيانات أبجدياً.", "اتخاذ قرار بناءً على شرط معين (نتيجة إذا صح ونتيجة إذا خطأ).", "دمج عدة خلايا متجاورة معا."], correct: 2 },
-            { id: 11, weight: 2, question: "أي دالة تستخدم للبحث عن قيمة معينة في جدول وإحضار ما يقابلها؟", options: ["<span class='en-text'>SUMIF</span>", "<span class='en-text'>VLOOKUP</span>", "<span class='en-text'>COUNTIF</span>", "<span class='en-text'>LOOK</span>"], correct: 1 },
-            { id: 12, weight: 1, question: "ما الفائدة من تحويل الأرقام إلى مخطط بياني (Chart)؟", options: ["تقليص حجم مساحة الملف على القرص.", "إخفاء الأرقام السرية عن الموظفين.", "تسهيل فهم الأنماط ومساعدة الإدارة على اتخاذ القرار بسرعة.", "زيادة عدد الصفوف والأعمدة."], correct: 2 },
-            { id: 13, weight: 1, question: "ما هو أفضل مخطط بياني لإظهار تغير القيم بمرور الوقت (مثل المبيعات شهرياً)؟", options: ["المخطط الخطي (Line Graph)", "المخطط الدائري (Pie Chart)", "مخطط الصور التوضيحية", "المخطط الهيكلي التنظيمي"], correct: 0 },
-            { id: 14, weight: 2, question: "ما هو الهدف من أداة التحقق من صحة البيانات (Data Validation)؟", options: ["فحص الفيروسات في ملفات الإكسل.", "التأكد من الاتصال بالإنترنت.", "منع المستخدمين من إدخال أخطاء أو بيانات غير صالحة في الخلايا.", "تسريع أداء معالج الكمبيوتر."], correct: 2 },
-            { id: 15, weight: 1, question: "ماذا يقصد بمصطلح التنسيق الشرطي (Conditional Formatting)؟", options: ["تغيير لون أو شكل الخلية تلقائياً بناءً على قيمتها (مثل تلوين الخسائر بالأحمر).", "تأمين الملف بكلمة مرور صعبة.", "طباعة المستند على صفحة واحدة.", "تعديل حجم ورقة العمل الافتراضية."], correct: 0 },
-            { id: 16, weight: 1, question: "ما هي وظيفة أداة التصفية (Filter) في الجداول؟", options: ["عرض صفوف محددة تتطابق مع شروط معينة وإخفاء الباقي مؤقتاً.", "مسح الجدول نهائياً من الذاكرة.", "دمج الخلايا المجاورة في خلية واحدة كبيرة.", "تغيير نوع الخط وحجمه."], correct: 0 },
-            { id: 17, weight: 2, question: "ماذا يمثل نموذج \"ماذا لو\" (What-if modeling) في تحليل البيانات؟", options: ["تعديل واجهة البرنامج وألوانه.", "التنبؤ بتأثير تغيير المدخلات (مثل الأسعار) على النتائج المستقبلية.", "حفظ النسخ الاحتياطية على السحابة.", "إلغاء المعادلات الرياضية تماماً."], correct: 1 },
-            { id: 18, weight: 2, question: "ما سبب ظهور الرمز <span class='en-text'>#####</span> داخل الخلية في إكسل؟", options: ["وجود خطأ في كتابة اسم الدالة.", "القسمة على صفر خطأ.", "العمود ضيق ولا يكفي لعرض الرقم بالكامل ويحتاج توسيع.", "الملف غير محفوظ."], correct: 2 },
-            { id: 19, weight: 1, question: "لماذا يفضل فصل خلايا المدخلات عن المخرجات في تصميم الجداول؟", options: ["لتسهيل الاستخدام وقراءة النموذج ومنع تعديل المعادلات بالخطأ.", "لأن البرنامج لا يعمل أبداً دون فصلهما.", "لتقليل حجم الخط المكتوب.", "لزيادة سرعة فتح الملف."], correct: 0 },
-            { id: 20, weight: 1, question: "ما هي الطريقة الأضمن لمنع ضياع الملف عند تعطل الحاسوب؟", options: ["إغلاق الشاشة بسرعة.", "الاعتماد على الطباعة الورقية فقط.", "حفظ نسخ احتياطية بانتظام على التخزين السحابي أو قرص خارجي (Backup).", "إعادة تشغيل الجهاز."], correct: 2 },
-            { id: 21, weight: 1, question: "ما المقصود بـ \"نموذج البيانات\" (Data Model) عموماً؟", options: ["شكل جهاز الكمبيوتر الخارجي.", "نظام التشغيل المثبت على الجهاز.", "الهيكل التنظيمي لترتيب البيانات والعلاقات الرياضية بينها للتحليل.", "نوع الشاشة المستخدمة."], correct: 2 },
-            { id: 22, weight: 2, question: "ما هي الدالة المسؤولة عن إيجاد أقل (أدنى) قيمة رقمية في مجموعة خلايا؟", options: ["<span class='en-text'>MIN</span>", "<span class='en-text'>LOW</span>", "<span class='en-text'>SMALL</span>", "<span class='en-text'>BOTTOM</span>"], correct: 0 },
-            { id: 23, weight: 1, question: "ماذا تعني النقطتان الرأسيتان (:) في نطاق الخلايا مثل <span class='en-text'>A1:A10</span>؟", options: ["تحديد الخلايا المفردة فقط (الأولى والأخيرة فقط).", "تعني نطاق متصل يمتد من الخلية الأولى حتى الخلية الأخيرة.", "تقسيم محتوى الخلية الأولى على الأخيرة.", "خطأ برمجي في تحديد النطاق."], correct: 1 },
-            { id: 24, weight: 1, question: "لماذا تعتبر الجداول الإلكترونية أفضل من الطرق اليدوية في الحسابات المالية؟", options: ["لأنها ترتكب أخطاء بشرية أكثر.", "لأنها توفر دقة عالية وسرعة فائقة في تحديث النتائج.", "لأنها تحتاج وقتاً أطول للرسم.", "لأنها غير قابلة للتعديل."], correct: 1 },
-            { id: 25, weight: 1, question: "أي من رموز العمليات الحسابية التالية يُستخدم للضرب في برامج إكسل؟", options: ["<span class='en-text'>x</span>", "<span class='en-text'>*</span>", "<span class='en-text'>#</span>", "<span class='en-text'>&</span>"], correct: 1 },
-            { id: 26, weight: 2, question: "ما هو الخطأ الذي يظهر في إكسل عند قسمة رقم على صفر (<span class='en-text'>0</span>)?", options: ["<span class='en-text'>#DIV/0!</span>", "<span class='en-text'>#VALUE!</span>", "<span class='en-text'>#NAME?</span>", "<span class='en-text'>#REF!</span>"], correct: 0 },
-            { id: 27, weight: 1, question: "ما هو الرمز الذي تبدأ به أي معادلة أو دالة رياضية في برنامج إكسل؟", options: ["رمز الزائد (+)", "رمز التساوي (=)", "رمز النسبة المئوية (%)", "رمز النقطتين (:)"], correct: 1 },
-            { id: 28, weight: 1, question: "ماذا تعني رسالة الخطأ <span class='en-text'>#NAME?</span> في إكسل؟", options: ["القسمة على صفر.", "وجود خلية غير موجودة.", "خطأ في كتابة اسم الدالة أو النص غير المعرف.", "ارتفاع قيم الخلايا."], correct: 2 },
-            { id: 29, weight: 1, question: "أي من الصيغ التالية تستخدم لجمع الخلية A1 مع الخلية A2 بشكل صحيح؟", options: ["<span class='en-text'>=A1+A2</span>", "<span class='en-text'>SUM+A1+A2</span>", "<span class='en-text'>ADD(A1,A2)</span>", "<span class='en-text'>PLUS(A1,A2)</span>"], correct: 0 },
-            { id: 30, weight: 2, question: "ما هي الفائدة من استخدام المتغيرات في النماذج المصممة؟", options: ["تصعيب فهم النموذج على الآخرين.", "إمكانية تغيير القيم لرؤية النتائج الجديدة فوراً دون إعادة بناء الجدول.", "تثبيت البرنامج وعدم السماح بتعديله نهائياً.", "زيادة حجم ملف الحفظ."], correct: 1 }
+            { id: 9, weight: 2, question: "ما هو الغرض الأساسي من استخدام دالة الشرط <span class='en-text'>IF</span>؟", options: ["حذف البيانات المكررة تلقائياً.", "ترتيب الأسماء والبيانات أبجدياً.", "اتخاذ قرار بناءً على شرط معين (نتيجة إذا صح ونتيجة إذا خطأ).", "دمج عدة خلايا متجاورة معا."], correct: 2 },
+            { id: 10, weight: 2, question: "أي دالة تستخدم للبحث عن قيمة معينة في جدول وإحضار ما يقابلها؟", options: ["<span class='en-text'>SUMIF</span>", "<span class='en-text'>VLOOKUP</span>", "<span class='en-text'>COUNTIF</span>", "<span class='en-text'>LOOK</span>"], correct: 1 },
+            { id: 11, weight: 2, question: "ما هو أفضل مخطط بياني لإظهار تغير القيم بمرور الوقت (مثل المبيعات شهرياً)؟", options: ["المخطط الخطي (Line Graph)", "المخطط الدائري (Pie Chart)", "مخطط الصور التوضيحية", "المخطط الهيكلي التنظيمي"], correct: 0 },
+            { id: 12, weight: 2, question: "ما هو الهدف من أداة التحقق من صحة البيانات (Data Validation)؟", options: ["فحص الفيروسات في ملفات الإكسل.", "التأكد من الاتصال بالإنترنت.", "منع المستخدمين من إدخال أخطاء أو بيانات غير صالحة في الخلايا.", "تسريع أداء معالج الكمبيوتر."], correct: 2 },
+            { id: 13, weight: 2, question: "ماذا يقصد بمصطلح التنسيق الشرطي (Conditional Formatting)؟", options: ["تغيير لون أو شكل الخلية تلقائياً بناءً على قيمتها (مثل تلوين الخسائر بالأحمر).", "تأمين الملف بكلمة مرور صعبة.", "طباعة المستند على صفحة واحدة.", "تعديل حجم ورقة العمل الافتراضية."], correct: 0 },
+            { id: 14, weight: 2, question: "ما هي وظيفة أداة التصفية (Filter) في الجداول؟", options: ["عرض صفوف محددة تتطابق مع شروط معينة وإخفاء الباقي مؤقتاً.", "مسح الجدول نهائياً من الذاكرة.", "دمج الخلايا المجاورة في خلية واحدة كبيرة.", "تغيير نوع الخط وحجمه."], correct: 0 },
+            { id: 15, weight: 2, question: "ماذا يمثل نموذج \"ماذا لو\" (What-if modeling) في تحليل البيانات؟", options: ["تعديل واجهة البرنامج وألوانه.", "التنبؤ بتأثير تغيير المدخلات (مثل الأسعار) على النتائج المستقبلية.", "حفظ النسخ الاحتياطية على السحابة.", "إلغاء المعادلات الرياضية تماماً."], correct: 1 },
+            { id: 16, weight: 2, question: "ما سبب ظهور الرمز <span class='en-text'>#####</span> داخل الخلية في إكسل؟", options: ["وجود خطأ في كتابة اسم الدالة.", "القسمة على صفر خطأ.", "العمود ضيق ولا يكفي لعرض الرقم بالكامل ويحتاج توسيع.", "الملف غير محفوظ."], correct: 2 },
+            { id: 17, weight: 2, question: "لماذا يفضل فصل خلايا المدخلات عن المخرجات في تصميم الجداول؟", options: ["لتسهيل الاستخدام وقراءة النموذج ومنع تعديل المعادلات بالخطأ.", "لأن البرنامج لا يعمل أبداً دون فصلهما.", "لتقليل حجم الخط المكتوب.", "لزيادة سرعة فتح الملف."], correct: 0 },
+            { id: 18, weight: 2, question: "ما هي الطريقة الأضمن لمنع ضياع الملف عند تعطل الحاسوب؟", options: ["إغلاق الشاشة بسرعة.", "الاعتماد على الطباعة الورقية فقط.", "حفظ نسخ احتياطية بانتظام على التخزين السحابي أو قرص خارجي (Backup).", "إعادة تشغيل الجهاز."], correct: 2 },
+            { id: 19, weight: 2, question: "ما المقصود بـ \"نموذج البيانات\" (Data Model) عموماً؟", options: ["شكل جهاز الكمبيوتر الخارجي.", "نظام التشغيل المثبت على الجهاز.", "الهيكل التنظيمي لترتيب البيانات والعلاقات الرياضية بينها للتحليل.", "نوع الشاشة المستخدمة."], correct: 2 },
+            { id: 20, weight: 2, question: "ما هي الدالة المسؤولة عن إيجاد أقل (أدنى) قيمة رقمية في مجموعة خلايا؟", options: ["<span class='en-text'>MIN</span>", "<span class='en-text'>LOW</span>", "<span class='en-text'>SMALL</span>", "<span class='en-text'>BOTTOM</span>"], correct: 0 },
+            { id: 21, weight: 2, question: "لماذا تعتبر الجداول الإلكترونية أفضل من الطرق اليدوية في الحسابات المالية؟", options: ["لأنها ترتكب أخطاء بشرية أكثر.", "لأنها توفر دقة عالية وسرعة فائقة في تحديث النتائج.", "لأنها تحتاج وقتاً أطول للرسم.", "لأنها غير قابلة للتعديل."], correct: 1 },
+            { id: 22, weight: 2, question: "أي من رموز العمليات الحسابية التالية يُستخدم للضرب في برامج إكسل؟", options: ["<span class='en-text'>x</span>", "<span class='en-text'>*</span>", "<span class='en-text'>#</span>", "<span class='en-text'>&</span>"], correct: 1 },
+            { id: 23, weight: 2, question: "ما هو الخطأ الذي يظهر في إكسل عند قسمة رقم على صفر (<span class='en-text'>0</span>)?", options: ["<span class='en-text'>#DIV/0!</span>", "<span class='en-text'>#VALUE!</span>", "<span class='en-text'>#NAME?</span>", "<span class='en-text'>#REF!</span>"], correct: 0 },
+            { id: 24, weight: 2, question: "ما هو الرمز الذي تبدأ به أي معادلة أو دالة رياضية في برنامج إكسل؟", options: ["رمز الزائد (+)", "رمز التساوي (=)", "رمز النسبة المئوية (%)", "رمز النقطتين (:)"], correct: 1 },
+            { id: 25, weight: 2, question: "ما هي الفائدة من استخدام المتغيرات في النماذج المصممة؟", options: ["تصعيب فهم النموذج على الآخرين.", "إمكانية تغيير القيم لرؤية النتائج الجديدة فوراً دون إعادة بناء الجدول.", "تثبيت البرنامج وعدم السماح بتعديله نهائياً.", "زيادة حجم ملف الحفظ."], correct: 1 }
         ];
 
         let currentStage = 'main';
@@ -610,7 +511,7 @@
         let initialScore = 0;
         let finalScore = 0;
         let wrongQuestionsList = [];
-        let firstRoundMistakes = []; // لتخزين الأسئلة الخاطئة في المحاولة الأولى لعرضها لاحقاً
+        let firstRoundMistakes = [];
 
         function startQuiz() {
             document.getElementById('welcome-screen').style.display = 'none';
@@ -644,7 +545,7 @@
                 card.innerHTML = `
                     <div class="q-title">
                         <span>السؤال ${index + 1}: ${q.question}</span>
-                        <span class="q-weight">${q.weight} علامة</span>
+                        <span class="q-weight">${q.weight} علامات</span>
                     </div>
                     <div class="options-list">
                         ${optionsHtml}
@@ -739,9 +640,8 @@
             
             document.getElementById('second-score-card').style.display = 'none';
             document.getElementById('label-score-1').innerText = "درجتك الأساسية";
-            document.getElementById('first-score-val').innerText = `${score} / 50`;
+            document.getElementById('first-score-val').innerText = `${score} / 50`; // الترتيب الصحيح المحصلة / العظمى
             
-            // إخفاء صندوق الأخطاء في التقرير الأول
             document.getElementById('mistakes-review-box').style.display = 'none';
 
             let percentage = ((score / 50) * 100).toFixed(1);
@@ -784,9 +684,8 @@
             document.getElementById('second-score-card').style.display = 'block';
             document.getElementById('label-score-1').innerText = "النتيجة قبل التدارك";
             document.getElementById('first-score-val').innerText = `${beforeScore} / 50`;
-            document.getElementById('after-score-val').innerText = `${afterScore} / 50`;
+            document.getElementById('after-score-val').innerText = `${afterScore} / 50`; // الترتيب الصحيح
             
-            // تعبئة وعرض الأسئلة الخاطئة والحل الصحيح في شاشة النتيجة النهائية
             const mistakesContent = document.getElementById('mistakes-list-content');
             mistakesContent.innerHTML = '';
             

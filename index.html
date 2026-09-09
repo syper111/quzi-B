@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>امتحان مادة النمذجة (الهدف ب) - الصف العاشر المستوى الثاني</title>
+    <title>امتحان مادة النمذجة الهدف ب - الصف العاشر</title>
     <style>
-        :root {
+         :root {
             --bg-color: #030712;
-            --card-bg: rgba(17, 24, 39, 0.75);
+            --card-bg: rgba(17, 24, 39, 0.8);
             --neon-cyan: #00f3ff;
             --neon-purple: #b000ff;
             --neon-green: #00ff66;
             --neon-pink: #ff0055;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --border-glass: rgba(255, 255, 255, 0.08);
+            --border-glass: rgba(255, 255, 255, 0.1);
             --border-glow: rgba(0, 243, 255, 0.4);
         }
-
+        
         * {
             box-sizing: border-box;
             margin: 0;
@@ -25,35 +26,34 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
-
+        
         body {
             background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(176, 0, 255, 0.05) 0%, transparent 40%);
+            background-image: radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.07) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(176, 0, 255, 0.07) 0%, transparent 40%);
             color: var(--text-main);
             min-height: 100vh;
-            padding: 15px;
+            padding: 12px;
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow-x: hidden;
         }
-
+        
         .container {
             width: 100%;
-            max-width: 650px;
+            max-width: 600px;
             background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-glass);
-            border-radius: 24px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 0 25px rgba(0, 243, 255, 0.08);
-            padding: 24px;
+            border-radius: 22px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 243, 255, 0.1);
+            padding: 20px;
             position: relative;
             overflow: hidden;
             animation: fadeInContainer 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-
+        
         .container::before {
             content: '';
             position: absolute;
@@ -61,286 +61,248 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
-            box-shadow: 0 0 12px var(--neon-cyan);
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-cyan));
+            background-size: 200% 100%;
+            animation: moveGradient 3s infinite linear;
         }
-
+        
+        @keyframes moveGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+        
         @keyframes fadeInContainer {
-            from { opacity: 0; transform: translateY(20px) scale(0.98); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
-
         /* شاشة الترحيب */
+        
         #welcome-screen {
             text-align: center;
-            padding: 30px 10px;
-            animation: fadeInContent 0.6s ease forwards;
+            padding: 25px 5px;
         }
-
+        
         .welcome-badge-box {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.9);
             border: 1px solid var(--border-glow);
-            border-radius: 18px;
+            border-radius: 16px;
             padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.12);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.15);
         }
-
-        .welcome-badge-box:hover {
-            border-color: var(--neon-purple);
-            box-shadow: 0 0 25px rgba(176, 0, 255, 0.25);
-            transform: translateY(-3px);
-        }
-
+        
         #welcome-screen h1 {
-            font-size: 22px;
+            font-size: 20px;
             color: var(--neon-cyan);
             margin-bottom: 8px;
             text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
-            line-height: 1.4;
         }
-
+        
         #welcome-screen h2 {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-main);
         }
-
+        
         #welcome-screen p {
             color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 28px;
+            font-size: 13px;
+            margin-bottom: 25px;
             line-height: 1.6;
         }
-
+        
         .btn-main {
             background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
             color: #030712;
             font-weight: 800;
-            font-size: 16px;
-            padding: 16px 30px;
+            font-size: 15px;
+            padding: 15px 25px;
             border: none;
-            border-radius: 14px;
+            border-radius: 12px;
             cursor: pointer;
             box-shadow: 0 0 20px rgba(0, 243, 255, 0.35);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
             width: 100%;
             letter-spacing: 0.5px;
         }
-
+        
         .btn-main:hover {
             box-shadow: 0 0 30px var(--neon-cyan);
             transform: translateY(-2px);
             filter: brightness(1.1);
         }
-
-        .btn-main:active {
-            transform: scale(0.97);
-        }
-
         /* قسم الامتحان */
+        
         #quiz-section {
             display: none;
-            animation: fadeInContent 0.5s ease forwards;
         }
-
-        @keyframes fadeInContent {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
+        
         .header-info-box {
             display: flex;
             justify-content: space-around;
             background: rgba(15, 23, 42, 0.7);
             border: 1px solid var(--border-glass);
-            border-radius: 14px;
-            padding: 10px;
-            margin-bottom: 14px;
-            gap: 10px;
+            border-radius: 12px;
+            padding: 8px;
+            margin-bottom: 12px;
+            gap: 8px;
         }
-
+        
         .info-pill {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--neon-cyan);
             background: rgba(0, 243, 255, 0.08);
             border: 1px solid rgba(0, 243, 255, 0.25);
-            padding: 6px 12px;
-            border-radius: 10px;
+            padding: 5px 10px;
+            border-radius: 8px;
             flex: 1;
             text-align: center;
             font-weight: 700;
-            box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
         }
-
+        
+        header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
         header h1 {
-            font-size: 17px;
+            font-size: 16px;
             color: var(--text-main);
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
-
+        
         header p {
             color: var(--text-muted);
-            font-size: 12px;
+            font-size: 11px;
         }
-
-        /* شريط التقدم النبضي */
+        
         .progress-bar-container {
             width: 100%;
             background: rgba(30, 41, 59, 0.7);
-            height: 8px;
-            border-radius: 4px;
-            margin-bottom: 22px;
+            height: 6px;
+            border-radius: 3px;
+            margin-bottom: 18px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-
+        
         .progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-cyan));
-            background-size: 200% 100%;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
             width: 0%;
-            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            animation: pulseGlow 2s infinite linear;
-            box-shadow: 0 0 12px var(--neon-cyan);
+            transition: width 0.4s ease;
+            box-shadow: 0 0 10px var(--neon-cyan);
         }
-
-        @keyframes pulseGlow {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
-
-        /* بطاقات الأسئلة المتحركة */
+        
         .question-card {
-            background: rgba(15, 23, 42, 0.65);
-            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.6);
             border: 1px solid var(--border-glass);
-            border-radius: 16px;
-            padding: 18px;
-            margin-bottom: 16px;
-            opacity: 0;
-            transform: translateY(15px);
-            animation: slideUpCard 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .question-card:hover {
-            border-color: rgba(0, 243, 255, 0.3);
-            box-shadow: 0 4px 20px rgba(0, 243, 255, 0.08);
-        }
-
-        @keyframes slideUpCard {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .q-title {
-            font-size: 14px;
-            font-weight: 700;
+            border-radius: 14px;
+            padding: 16px;
             margin-bottom: 14px;
+            animation: slideUp 0.4s ease forwards;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .q-title {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            line-height: 1.5;
-            gap: 12px;
+            line-height: 1.4;
+            gap: 10px;
         }
-
+        
         .q-weight {
-            font-size: 10px;
+            font-size: 9px;
             background: rgba(176, 0, 255, 0.15);
             color: #d8b4fe;
             border: 1px solid var(--neon-purple);
-            padding: 3px 10px;
-            border-radius: 20px;
+            padding: 2px 8px;
+            border-radius: 10px;
             white-space: nowrap;
-            box-shadow: 0 0 8px rgba(176, 0, 255, 0.25);
         }
-
+        
         .options-list {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
-
-        /* التفاعل اللمسي وبصري للخيار */
+        
         .option-label {
             display: flex;
             align-items: center;
             background: rgba(26, 34, 52, 0.7);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 12px 14px;
-            border-radius: 12px;
+            padding: 10px 12px;
+            border-radius: 10px;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            font-size: 13px;
-            line-height: 1.4;
+            transition: all 0.25s ease;
+            font-size: 12px;
+            line-height: 1.3;
             position: relative;
-            overflow: hidden;
         }
-
-        .option-label::before {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: 3px;
-            background: var(--neon-cyan);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
+        
         .option-label:hover {
             background: rgba(30, 41, 59, 0.9);
             border-color: var(--neon-cyan);
-            transform: translateX(-4px);
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.15);
+            transform: translateX(-3px);
         }
-
-        .option-label:hover::before {
-            opacity: 1;
-        }
-
+        
         .option-label input[type="radio"] {
             appearance: none;
             -webkit-appearance: none;
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             border: 2px solid var(--text-muted);
             border-radius: 50%;
-            margin-left: 12px;
+            margin-left: 10px;
             outline: none;
             cursor: pointer;
-            display: inline-block;
-            position: relative;
             background: rgba(15, 23, 42, 0.5);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
             flex-shrink: 0;
+            transition: all 0.2s ease;
         }
-
+        
         .option-label input[type="radio"]:checked {
             border-color: var(--neon-cyan);
             background: rgba(0, 243, 255, 0.2);
-            box-shadow: 0 0 10px var(--neon-cyan);
+            box-shadow: 0 0 8px var(--neon-cyan);
         }
-
+        
         .option-label input[type="radio"]:checked::after {
             content: '';
             position: absolute;
-            top: 3px;
-            left: 3px;
+            top: 2px;
+            left: 2px;
             width: 8px;
             height: 8px;
             background: var(--neon-cyan);
             border-radius: 50%;
-            box-shadow: 0 0 6px var(--neon-cyan);
         }
-
+        
         .en-text {
             direction: ltr;
             unicode-bidi: embed;
@@ -349,144 +311,216 @@
             color: var(--neon-cyan);
             font-weight: bold;
         }
-
+        
         .correct-ans {
             border-color: var(--neon-green) !important;
-            background: rgba(0, 255, 102, 0.1) !important;
+            background: rgba(0, 255, 102, 0.12) !important;
             color: var(--neon-green);
-            box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
         }
-
-        .correct-ans::before {
-            background: var(--neon-green);
-            opacity: 1;
-        }
-
+        
         .correct-ans input[type="radio"] {
             border-color: var(--neon-green);
             background: rgba(0, 255, 102, 0.2);
-            box-shadow: 0 0 10px var(--neon-green);
         }
-
+        
         .correct-ans input[type="radio"]::after {
             background: var(--neon-green);
-            box-shadow: 0 0 6px var(--neon-green);
         }
-
+        
         .wrong-ans {
             border-color: var(--neon-pink) !important;
-            background: rgba(255, 0, 85, 0.1) !important;
+            background: rgba(255, 0, 85, 0.12) !important;
             color: var(--neon-pink);
-            box-shadow: 0 0 15px rgba(255, 0, 85, 0.2);
         }
-
-        .wrong-ans::before {
-            background: var(--neon-pink);
-            opacity: 1;
-        }
-
+        
         .wrong-ans input[type="radio"] {
             border-color: var(--neon-pink);
             background: rgba(255, 0, 85, 0.2);
-            box-shadow: 0 0 10px var(--neon-pink);
         }
-
+        
         .wrong-ans input[type="radio"]::after {
             background: var(--neon-pink);
-            box-shadow: 0 0 6px var(--neon-pink);
         }
-
-        /* شاشة نتائج على شكل "لوحة إنجاز رقمية" (Cyber Result Card) تحت زر الاعتماد بمؤثرات فخمة */
+        /* لوحة النتائج والأزرار الثلاثة */
+        
         #result-box {
             display: none;
             text-align: center;
-            padding: 25px;
+            padding: 20px;
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(20px);
-            border-radius: 20px;
+            border-radius: 18px;
             border: 2px solid var(--neon-cyan);
-            box-shadow: 0 0 35px rgba(0, 243, 255, 0.3), inset 0 0 15px rgba(0, 243, 255, 0.1);
-            margin-top: 20px;
-            animation: cyberCardPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+            margin-top: 15px;
+            animation: popCard 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-
-        @keyframes cyberCardPop {
-            0% { opacity: 0; transform: scale(0.9) translateY(30px); filter: brightness(1.5); }
-            100% { opacity: 1; transform: scale(1) translateY(0); filter: brightness(1); }
+        
+        @keyframes popCard {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
-
+        
         #result-box h2 {
             color: var(--neon-cyan);
-            font-size: 22px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 12px rgba(0, 243, 255, 0.6);
+            font-size: 20px;
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
         }
-
+        
         .badge-tag {
             display: inline-block;
             background: rgba(0, 255, 102, 0.1);
             border: 1px solid var(--neon-green);
             color: var(--neon-green);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-bottom: 16px;
-            box-shadow: 0 0 12px rgba(0, 255, 102, 0.25);
+            padding: 5px 14px;
+            border-radius: 15px;
+            font-size: 11px;
+            margin-bottom: 14px;
             font-weight: 700;
         }
-
+        
         .result-stats-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 18px;
+            gap: 10px;
+            margin-bottom: 15px;
         }
-
+        
         .result-stat-card {
             background: rgba(26, 34, 52, 0.8);
             border: 1px solid var(--border-glass);
-            border-radius: 14px;
-            padding: 12px;
+            border-radius: 12px;
+            padding: 10px;
             text-align: center;
         }
-
+        
         .result-stat-card span {
             display: block;
-            font-size: 11px;
+            font-size: 10px;
             color: var(--text-muted);
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
-
+        
         .result-stat-card strong {
-            font-size: 17px;
+            font-size: 16px;
             color: var(--neon-cyan);
         }
-
-        /* الفوتر */
+        
+        .action-buttons-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-action-custom {
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            border: 1px solid var(--border-glass);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .btn-exit {
+            background: rgba(255, 0, 85, 0.15);
+            color: var(--neon-pink);
+            border-color: rgba(255, 0, 85, 0.4);
+        }
+        
+        .btn-exit:hover {
+            background: rgba(255, 0, 85, 0.3);
+            box-shadow: 0 0 12px rgba(255, 0, 85, 0.3);
+        }
+        
+        .btn-restart {
+            background: rgba(0, 243, 255, 0.15);
+            color: var(--neon-cyan);
+            border-color: rgba(0, 243, 255, 0.4);
+        }
+        
+        .btn-restart:hover {
+            background: rgba(0, 243, 255, 0.3);
+            box-shadow: 0 0 12px rgba(0, 243, 255, 0.3);
+        }
+        
+        .btn-retry-wrong {
+            background: rgba(176, 0, 255, 0.15);
+            color: #d8b4fe;
+            border-color: rgba(176, 0, 255, 0.4);
+        }
+        
+        .btn-retry-wrong:hover {
+            background: rgba(176, 0, 255, 0.3);
+            box-shadow: 0 0 12px rgba(176, 0, 255, 0.3);
+        }
+        /* تأثيرات الفرح المتحركة والمتناثرة للعلامة الكاملة */
+        
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 9999;
+            display: none;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: var(--neon-cyan);
+            animation: fallConfetti 3s ease-in-out infinite;
+        }
+        
+        @keyframes fallConfetti {
+            0% {
+                transform: translateY(-20px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
         footer {
             text-align: center;
-            margin-top: 24px;
-            padding-top: 14px;
+            margin-top: 18px;
+            padding-top: 10px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--text-muted);
-            font-size: 11px;
-            letter-spacing: 0.5px;
+            font-size: 10px;
         }
     </style>
 </head>
+
 <body>
+
+    <!-- حاوية الاحتفال بالفرح -->
+    <div class="confetti-container" id="confettiContainer"></div>
 
     <div class="container">
         <!-- شاشة الترحيب -->
         <div id="welcome-screen">
             <div class="welcome-badge-box">
-                <h1>امتحان مادة النمذجة (الهدف ب)</h1>
+                <h1>امتحان مادة النمذجة الهدف ب</h1>
                 <h2>الصف العاشر - المستوى الثاني</h2>
             </div>
-            <p>مرحباً بك في بيئة الاختبار المستقبلية المتقدمة! سيتم تقييمك عبر 30 سؤالاً، وعند الانتهاء ستظهر لك النتيجة الأولى، ثم تخوض جولة تدارك الأخطاء لتظهر لك النتيجة النهائية والمقارنة بشكل فخم.</p>
-            <button type="button" class="btn-main" onclick="startQuiz()">ابدأ الامتحان الآن</button>
+            <p>أهلاً بك في بيئة الاختبار الاحترافية. يتكون الاختبار من 25 سؤالاً، وبمجرد الانتهاء ستظهر لك الإجابات الصحيحة والخاطئة مع خيارات مرنة لحفظ النتيجة، إعادة الامتحان كلياً، أو تدارك الأخطاء.</p>
+            <button type="button" class="btn-main" onclick="startQuiz()">ابدأ الاختبار الآن</button>
         </div>
 
         <!-- قسم حل الامتحان -->
@@ -494,10 +528,10 @@
             <header>
                 <div class="header-info-box">
                     <div class="info-pill">الصف العاشر</div>
-                    <div class="info-pill">المستوى الثاني</div>
+                    <div class="info-pill"> المستوى الثاني </div>
                 </div>
-                <h1 id="section-title">امتحان مادة النمذجة (الهدف ب)</h1>
-                <p id="section-subtitle">الأسئلة الأساسية (30 سؤالاً)</p>
+                <h1 id="section-title">امتحان مادة النمذجة الهدف ب</h1>
+                <p id="section-subtitle">الأسئلة الأساسية (25 سؤالاً)</p>
             </header>
             <div class="progress-bar-container">
                 <div class="progress-bar" id="progressBar"></div>
@@ -505,16 +539,16 @@
 
             <form id="quizForm">
                 <div id="questions-container"></div>
-                <button type="button" class="btn-main" id="submitBtn" onclick="processSubmissions()" style="margin-top: 15px;">اعتماد الإجابات وعرض النتيجة الأولى</button>
+                <button type="button" class="btn-main" id="submitBtn" onclick="processSubmissions()" style="margin-top: 12px;">اعتماد الإجابات وعرض النتيجة</button>
             </form>
 
-            <!-- شاشة نتائج على شكل "لوحة إنجاز رقمية" (Cyber Result Card) تظهر بالأسفل بعد كل مرحلة -->
+            <!-- لوحة النتائج والأزرار الثلاثة -->
             <div id="result-box">
-                <h2 id="result-box-title">بطاقة إنجاز رقمية</h2>
-                <div class="badge-tag" id="status-badge">تم إكمال التصحيح بنجاح</div>
+                <h2 id="result-box-title">لوحة النتائج الرقمية</h2>
+                <div class="badge-tag" id="status-badge">تم التصحيح بنجاح</div>
                 <div class="result-stats-grid" id="stats-grid-container">
                     <div class="result-stat-card">
-                        <span id="label-score-1">النتيجة الأولى</span>
+                        <span id="label-score-1">النتيجة الحالية</span>
                         <strong id="first-score-val">0 / 50</strong>
                     </div>
                     <div class="result-stat-card" id="second-score-card" style="display: none;">
@@ -522,50 +556,174 @@
                         <strong id="after-score-val" style="color: var(--neon-green);">0 / 50</strong>
                     </div>
                 </div>
-                <p id="score-text" style="color: var(--text-muted); font-size: 13px; margin-bottom: 18px;"></p>
-                <button type="button" class="btn-main" id="result-action-btn" onclick="proceedToReviewOrRestart()">التوجه لجولة تدارك الأخطاء</button>
+                <p id="score-text" style="color: var(--text-muted); font-size: 12px; margin-bottom: 14px;"></p>
+
+                <!-- الأزرار الثلاثة المطلوبة -->
+                <div class="action-buttons-group">
+                    <button type="button" class="btn-action-custom btn-retry-wrong" id="btnRetryWrong" onclick="startWrongReview()" style="display: none;">إعادة الأخطاء والحصول على نتيجة أخرى</button>
+                    <button type="button" class="btn-action-custom btn-restart" onclick="location.reload()">إعادة الاختبار كلياً</button>
+                    <button type="button" class="btn-action-custom btn-exit" onclick="exitQuizSession()">خروج وحفظ النتيجة</button>
+                </div>
             </div>
         </div>
 
-        <!-- الفوتر -->
         <footer>
             إعداد: المهندس ابراهيم المدادحه
         </footer>
     </div>
 
     <script>
-        const originalQuizData = [
-            { id: 1, weight: 2, question: "ما الفائدة الأساسية من استخدام برامج جداول البيانات (Excel)؟", options: ["تعديل وتصميم الصور الثابتة.", "حفظ وإعادة حساب الأرقام والنتائج تلقائياً وبسرعة.", "كتابة المقالات الطويلة وتنسيقها.", "تصفح مواقع الإنترنت المختلفة."], correct: 1 },
-            { id: 2, weight: 1, question: "ماذا يقصد بمصطلح المدخلات (Inputs) في النماذج؟", options: ["البيانات الأولية والمتغيرة مثل التكاليف وأسعار البيع.", "الرسوم البيانية المرسومة في النهاية.", "الأخطاء البرمجية التي تظهر للمستخدم.", "الشاشات والتقارير المطبوعة."], correct: 0 },
-            { id: 3, weight: 2, question: "ما هي المخرجات (Outputs) في النماذج الرياضية؟", options: ["الأزرار واللوحات الجانبية.", "النتائج النهائية والتقارير المحسوبة بناءً على المدخلات.", "أخطاء البرمجة.", "الأسماء والرموز النصية."], correct: 1 },
-            { id: 4, weight: 2, question: "ما هي الصيغة الصحيحة لكتابة دالة الجمع في برنامج إكسل؟", options: ["TOTAL(A1:A5)", "<span class='en-text'>=SUM(A1:A5)</span>", "<span class='en-text'>SUM(A1:A5)=</span>", "<span class='en-text'>ADD(A1:A5)</span>"], correct: 1 },
-            { id: 5, weight: 2, question: "أي من الدوال التالية تُستخدم لإيجاد المتوسط الحسابي (المعدل)؟", options: ["<span class='en-text'>COUNT</span>", "<span class='en-text'>MAX</span>", "<span class='en-text'>AVERAGE</span>", "<span class='en-text'>SUM</span>"], correct: 2 },
-            { id: 6, weight: 2, question: "ما هي الدالة المسؤولة عن إيجاد أعلى (أكبر) قيمة في مجموعة خلايا؟", options: ["<span class='en-text'>MIN</span>", "<span class='en-text'>TOP</span>", "<span class='en-text'>MAX</span>", "<span class='en-text'>HIGH</span>"], correct: 2 },
-            { id: 7, weight: 2, question: "ما هي الدالة التي تستخدم لحساب عدد الخلايا التي تحتوي على أرقام؟", options: ["<span class='en-text'>COUNT</span>", "<span class='en-text'>SUM</span>", "<span class='en-text'>IF</span>", "<span class='en-text'>COUNTA</span>"], correct: 0 },
-            { id: 8, weight: 2, question: "ماذا تفعل رموز علامة الدولار مثل <span class='en-text'>$A$1</span> في المعادلات؟", options: ["تحويل العملة إلى دولار أمريكي.", "تثبيت الخلية (مرجع مطلق) لكي لا تتغير عند سحب المعادلة.", "حماية الملف بالكامل برقم سري.", "إخفاء محتوى الخلية المحددة."], correct: 1 },
-            { id: 9, weight: 1, question: "ماذا يسمى المرجع الذي يتغير تلقائياً عند نسخ المعادلة لخلية جديدة؟", options: ["المرجع النسبي (Relative Reference)", "المرجع الثابت المطلق", "المرجع المخفي", "المرجع الخارجي"], correct: 0 },
-            { id: 10, weight: 2, question: "ما هو الغرض الأساسي من استخدام دالة الشرط <span class='en-text'>IF</span>؟", options: ["حذف البيانات المكررة تلقائياً.", "ترتيب الأسماء والبيانات أبجدياً.", "اتخاذ قرار بناءً على شرط معين (نتيجة إذا صح ونتيجة إذا خطأ).", "دمج عدة خلايا متجاورة معا."], correct: 2 },
-            { id: 11, weight: 2, question: "أي دالة تستخدم للبحث عن قيمة معينة في جدول وإحضار ما يقابلها؟", options: ["<span class='en-text'>SUMIF</span>", "<span class='en-text'>VLOOKUP</span>", "<span class='en-text'>COUNTIF</span>", "<span class='en-text'>LOOK</span>"], correct: 1 },
-            { id: 12, weight: 1, question: "ما الفائدة من تحويل الأرقام إلى مخطط بياني (Chart)؟", options: ["تقليص حجم مساحة الملف على القرص.", "إخفاء الأرقام السرية عن الموظفين.", "تسهيل فهم الأنماط ومساعدة الإدارة على اتخاذ القرار بسرعة.", "زيادة عدد الصفوف والأعمدة."], correct: 2 },
-            { id: 13, weight: 1, question: "ما هو أفضل مخطط بياني لإظهار تغير القيم بمرور الوقت (مثل المبيعات شهرياً)؟", options: ["المخطط الخطي (Line Graph)", "المخطط الدائري (Pie Chart)", "مخطط الصور التوضيحية", "المخطط الهيكلي التنظيمي"], correct: 0 },
-            { id: 14, weight: 2, question: "ما هو الهدف من أداة التحقق من صحة البيانات (Data Validation)؟", options: ["فحص الفيروسات في ملفات الإكسل.", "التأكد من الاتصال بالإنترنت.", "منع المستخدمين من إدخال أخطاء أو بيانات غير صالحة في الخلايا.", "تسريع أداء معالج الكمبيوتر."], correct: 2 },
-            { id: 15, weight: 1, question: "ماذا يقصد بمصطلح التنسيق الشرطي (Conditional Formatting)؟", options: ["تغيير لون أو شكل الخلية تلقائياً بناءً على قيمتها (مثل تلوين الخسائر بالأحمر).", "تأمين الملف بكلمة مرور صعبة.", "طباعة المستند على صفحة واحدة.", "تعديل حجم ورقة العمل الافتراضية."], correct: 0 },
-            { id: 16, weight: 1, question: "ما هي وظيفة أداة التصفية (Filter) في الجداول؟", options: ["عرض صفوف محددة تتطابق مع شروط معينة وإخفاء الباقي مؤقتاً.", "مسح الجدول نهائياً من الذاكرة.", "دمج الخلايا المجاورة في خلية واحدة كبيرة.", "تغيير نوع الخط وحجمه."], correct: 0 },
-            { id: 17, weight: 2, question: "ماذا يمثل نموذج \"ماذا لو\" (What-if modeling) في تحليل البيانات؟", options: ["تعديل واجهة البرنامج وألوانه.", "التنبؤ بتأثير تغيير المدخلات (مثل الأسعار) على النتائج المستقبلية.", "حفظ النسخ الاحتياطية على السحابة.", "إلغاء المعادلات الرياضية تماماً."], correct: 1 },
-            { id: 18, weight: 2, question: "ما سبب ظهور الرمز <span class='en-text'>#####</span> داخل الخلية في إكسل؟", options: ["وجود خطأ في كتابة اسم الدالة.", "القسمة على صفر خطأ.", "العمود ضيق ولا يكفي لعرض الرقم بالكامل ويحتاج توسيع.", "الملف غير محفوظ."], correct: 2 },
-            { id: 19, weight: 1, question: "لماذا يفضل فصل خلايا المدخلات عن المخرجات في تصميم الجداول؟", options: ["لتسهيل الاستخدام وقراءة النموذج ومنع تعديل المعادلات بالخطأ.", "لأن البرنامج لا يعمل أبداً دون فصلهما.", "لتقليل حجم الخط المكتوب.", "لزيادة سرعة فتح الملف."], correct: 0 },
-            { id: 20, weight: 1, question: "ما هي الطريقة الأضمن لمنع ضياع الملف عند تعطل الحاسوب؟", options: ["إغلاق الشاشة بسرعة.", "الاعتماد على الطباعة الورقية فقط.", "حفظ نسخ احتياطية بانتظام على التخزين السحابي أو قرص خارجي (Backup).", "إعادة تشغيل الجهاز."], correct: 2 },
-            { id: 21, weight: 1, question: "ما المقصود بـ \"نموذج البيانات\" (Data Model) عموماً؟", options: ["شكل جهاز الكمبيوتر الخارجي.", "نظام التشغيل المثبت على الجهاز.", "الهيكل التنظيمي لترتيب البيانات والعلاقات الرياضية بينها للتحليل.", "نوع الشاشة المستخدمة."], correct: 2 },
-            { id: 22, weight: 2, question: "ما هي الدالة المسؤولة عن إيجاد أقل (أدنى) قيمة رقمية في مجموعة خلايا؟", options: ["<span class='en-text'>MIN</span>", "<span class='en-text'>LOW</span>", "<span class='en-text'>SMALL</span>", "<span class='en-text'>BOTTOM</span>"], correct: 0 },
-            { id: 23, weight: 1, question: "ماذا تعني النقطتان الرأسيتان (:) في نطاق الخلايا مثل <span class='en-text'>A1:A10</span>؟", options: ["تحديد الخلايا المفردة فقط (الأولى والأخيرة فقط).", "تعني نطاق متصل يمتد من الخلية الأولى حتى الخلية الأخيرة.", "تقسيم محتوى الخلية الأولى على الأخيرة.", "خطأ برمجي في تحديد النطاق."], correct: 1 },
-            { id: 24, weight: 1, question: "لماذا تعتبر الجداول الإلكترونية أفضل من الطرق اليدوية في الحسابات المالية؟", options: ["لأنها ترتكب أخطاء بشرية أكثر.", "لأنها توفر دقة عالية وسرعة فائقة في تحديث النتائج.", "لأنها تحتاج وقتاً أطول للرسم.", "لأنها غير قابلة للتعديل."], correct: 1 },
-            { id: 25, weight: 1, question: "أي من رموز العمليات الحسابية التالية يُستخدم للضرب في برامج إكسل؟", options: ["<span class='en-text'>x</span>", "<span class='en-text'>*</span>", "<span class='en-text'>#</span>", "<span class='en-text'>&</span>"], correct: 1 },
-            { id: 26, weight: 2, question: "ما هو الخطأ الذي يظهر في إكسل عند قسمة رقم على صفر (<span class='en-text'>0</span>)?", options: ["<span class='en-text'>#DIV/0!</span>", "<span class='en-text'>#VALUE!</span>", "<span class='en-text'>#NAME?</span>", "<span class='en-text'>#REF!</span>"], correct: 0 },
-            { id: 27, weight: 1, question: "ما هو الرمز الذي تبدأ به أي معادلة أو دالة رياضية في برنامج إكسل؟", options: ["رمز الزائد (+)", "رمز التساوي (=)", "رمز النسبة المئوية (%)", "رمز النقطتين (:)"], correct: 1 },
-            { id: 28, weight: 1, question: "ماذا تعني رسالة الخطأ <span class='en-text'>#NAME?</span> في إكسل؟", options: ["القسمة على صفر.", "وجود خلية غير موجودة.", "خطأ في كتابة اسم الدالة أو النص غير المعرف.", "ارتفاع قيم الخلايا."], correct: 2 },
-            { id: 29, weight: 1, question: "أي من الصيغ التالية تستخدم لجمع الخلية A1 مع الخلية A2 بشكل صحيح؟", options: ["<span class='en-text'>=A1+A2</span>", "<span class='en-text'>SUM+A1+A2</span>", "<span class='en-text'>ADD(A1,A2)</span>", "<span class='en-text'>PLUS(A1,A2)</span>"], correct: 0 },
-            { id: 30, weight: 2, question: "ما هي الفائدة من استخدام المتغيرات في النماذج المصممة؟", options: ["تصعيب فهم النموذج على الآخرين.", "إمكانية تغيير القيم لرؤية النتائج الجديدة فوراً دون إعادة بناء الجدول.", "تثبيت البرنامج وعدم السماح بتعديله نهائياً.", "زيادة حجم ملف الحفظ."], correct: 1 }
-        ];
+        const originalQuizData = [{
+            id: 1,
+            weight: 2,
+            question: "ما الفائدة الأساسية من استخدام برامج جداول البيانات (Excel)؟",
+            options: ["تعديل وتصميم الصور الثابتة.", "حفظ وإعادة حساب الأرقام والنتائج تلقائياً وبسرعة.", "كتابة المقالات الطويلة وتنسيقها.", "تصفح مواقع الإنترنت المختلفة."],
+            correct: 1
+        }, {
+            id: 2,
+            weight: 2,
+            question: "ماذا يقصد بمصطلح المدخلات (Inputs) في النماذج؟",
+            options: ["البيانات الأولية والمتغيرة مثل التكاليف وأسعار البيع.", "الرسوم البيانية المرسومة في النهاية.", "الأخطاء البرمجية التي تظهر للمستخدم.", "الشاشات والتقارير المطبوعة."],
+            correct: 0
+        }, {
+            id: 3,
+            weight: 2,
+            question: "ما هي المخرجات (Outputs) في النماذج الرياضية؟",
+            options: ["الأزرار واللوحات الجانبية.", "النتائج النهائية والتقارير المحسوبة بناءً على المدخلات.", "أخطاء البرمجة.", "الأسماء والرموز النصية."],
+            correct: 1
+        }, {
+            id: 4,
+            weight: 2,
+            question: "ما هي الصيغة الصحيحة لكتابة دالة الجمع في برنامج إكسل؟",
+            options: ["TOTAL(A1:A5)", "<span class='en-text'>=SUM(A1:A5)</span>", "<span class='en-text'>SUM(A1:A5)=</span>", "<span class='en-text'>ADD(A1:A5)</span>"],
+            correct: 1
+        }, {
+            id: 5,
+            weight: 2,
+            question: "أي من الدوال التالية تُستخدم لإيجاد المتوسط الحسابي (المعدل)؟",
+            options: ["<span class='en-text'>COUNT</span>", "<span class='en-text'>MAX</span>", "<span class='en-text'>AVERAGE</span>", "<span class='en-text'>SUM</span>"],
+            correct: 2
+        }, {
+            id: 6,
+            weight: 2,
+            question: "ما هي الدالة المسؤولة عن إيجاد أعلى (أكبر) قيمة في مجموعة خلايا؟",
+            options: ["<span class='en-text'>MIN</span>", "<span class='en-text'>TOP</span>", "<span class='en-text'>MAX</span>", "<span class='en-text'>HIGH</span>"],
+            correct: 2
+        }, {
+            id: 7,
+            weight: 2,
+            question: "ما هي الدالة التي تستخدم لحساب عدد الخلايا التي تحتوي على أرقام؟",
+            options: ["<span class='en-text'>COUNT</span>", "<span class='en-text'>SUM</span>", "<span class='en-text'>IF</span>", "<span class='en-text'>COUNTA</span>"],
+            correct: 0
+        }, {
+            id: 8,
+            weight: 2,
+            question: "ماذا تفعل رموز علامة الدولار مثل <span class='en-text'>$A$1</span> في المعادلات؟",
+            options: ["تحويل العملة إلى دولار أمريكي.", "تثبيت الخلية (مرجع مطلق) لكي لا تتغير عند سحب المعادلة.", "حماية الملف بالكامل برقم سري.", "إخفاء محتوى الخلية المحددة."],
+            correct: 1
+        }, {
+            id: 9,
+            weight: 2,
+            question: "ماذا يسمى المرجع الذي يتغير تلقائياً عند نسخ المعادلة لخلية جديدة؟",
+            options: ["المرجع النسبي (Relative Reference)", "المرجع الثابت المطلق", "المرجع المخفي", "المرجع الخارجي"],
+            correct: 0
+        }, {
+            id: 10,
+            weight: 2,
+            question: "ما هو الغرض الأساسي من استخدام دالة الشرط <span class='en-text'>IF</span>؟",
+            options: ["حذف البيانات المكررة تلقائياً.", "ترتيب الأسماء والبيانات أبجدياً.", "اتخاذ قرار بناءً على شرط معين (نتيجة إذا صح ونتيجة إذا خطأ).", "دمج عدة خلايا متجاورة معا."],
+            correct: 2
+        }, {
+            id: 11,
+            weight: 2,
+            question: "أي دالة تستخدم للبحث عن قيمة معينة في جدول وإحضار ما يقابلها؟",
+            options: ["<span class='en-text'>SUMIF</span>", "<span class='en-text'>VLOOKUP</span>", "<span class='en-text'>COUNTIF</span>", "<span class='en-text'>LOOK</span>"],
+            correct: 1
+        }, {
+            id: 12,
+            weight: 2,
+            question: "ما الفائدة من تحويل الأرقام إلى مخطط بياني (Chart)؟",
+            options: ["تقليص حجم مساحة الملف على القرص.", "إخفاء الأرقام السرية عن الموظفين.", "تسهيل فهم الأنماط ومساعدة الإدارة على اتخاذ القرار بسرعة.", "زيادة عدد الصفوف والأعمدة."],
+            correct: 2
+        }, {
+            id: 13,
+            weight: 2,
+            question: "ما هو أفضل مخطط بياني لإظهار تغير القيم بمرور الوقت (مثل المبيعات شهرياً)؟",
+            options: ["المخطط الخطي (Line Graph)", "المخطط الدائري (Pie Chart)", "مخطط الصور التوضيحية", "المخطط الهيكلي التنظيمي"],
+            correct: 0
+        }, {
+            id: 14,
+            weight: 2,
+            question: "ما هو الهدف من أداة التحقق من صحة البيانات (Data Validation)؟",
+            options: ["فحص الفيروسات في ملفات الإكسل.", "التأكد من الاتصال بالإنترنت.", "منع المستخدمين من إدخال أخطاء أو بيانات غير صالحة في الخلايا.", "تسريع أداء معالج الكمبيوتر."],
+            correct: 2
+        }, {
+            id: 15,
+            weight: 2,
+            question: "ماذا يقصد بمصطلح التنسيق الشرطي (Conditional Formatting)؟",
+            options: ["تغيير لون أو شكل الخلية تلقائياً بناءً على قيمتها (مثل تلوين الخسائر بالأحمر).", "تأمين الملف بكلمة مرور صعبة.", "طباعة المستند على صفحة واحدة.", "تعديل حجم ورقة العمل الافتراضية."],
+            correct: 0
+        }, {
+            id: 16,
+            weight: 2,
+            question: "ما هي وظيفة أداة التصفية (Filter) في الجداول؟",
+            options: ["عرض صفوف محددة تتطابق مع شروط معينة وإخفاء الباقي مؤقتاً.", "مسح الجدول نهائياً من الذاكرة.", "دمج الخلايا المجاورة في خلية واحدة كبيرة.", "تغيير نوع الخط وحجمه."],
+            correct: 0
+        }, {
+            id: 17,
+            weight: 2,
+            question: "ماذا يمثل نموذج \"ماذا لو\" (What-if modeling) في تحليل البيانات؟",
+            options: ["تعديل واجهة البرنامج وألوانه.", "التنبؤ بتأثير تغيير المدخلات (مثل الأسعار) على النتائج المستقبلية.", "حفظ النسخ الاحتياطية على السحابة.", "إلغاء المعادلات الرياضية تماماً."],
+            correct: 1
+        }, {
+            id: 18,
+            weight: 2,
+            question: "ما سبب ظهور الرمز <span class='en-text'>#####</span> داخل الخلية في إكسل؟",
+            options: ["وجود خطأ في كتابة اسم الدالة.", "القسمة على صفر خطأ.", "العمود ضيق ولا يكفي لعرض الرقم بالكامل ويحتاج توسيع.", "الملف غير محفوظ."],
+            correct: 2
+        }, {
+            id: 19,
+            weight: 2,
+            question: "لماذا يفضل فصل خلايا المدخلات عن المخرجات في تصميم الجداول؟",
+            options: ["لتسهيل الاستخدام وقراءة النموذج ومنع تعديل المعادلات بالخطأ.", "لأن البرنامج لا يعمل أبداً دون فصلهما.", "لتقليل حجم الخط المكتوب.", "لزيادة سرعة فتح الملف."],
+            correct: 0
+        }, {
+            id: 20,
+            weight: 2,
+            question: "ما هي الطريقة الأضمن لمنع ضياع الملف عند تعطل الحاسوب؟",
+            options: ["إغلاق الشاشة بسرعة.", "الاعتماد على الطباعة الورقية فقط.", "حفظ نسخ احتياطية بانتظام على التخزين السحابي أو قرص خارجي (Backup).", "إعادة تشغيل الجهاز."],
+            correct: 2
+        }, {
+            id: 21,
+            weight: 2,
+            question: "ما المقصود بـ \"نموذج البيانات\" (Data Model) عموماً؟",
+            options: ["شكل جهاز الكمبيوتر الخارجي.", "نظام التشغيل المثبت على الجهاز.", "الهيكل التنظيمي لترتيب البيانات والعلاقات الرياضية بينها للتحليل.", "نوع الشاشة المستخدمة."],
+            correct: 2
+        }, {
+            id: 22,
+            weight: 2,
+            question: "ما هي الدالة المسؤولة عن إيجاد أقل (أدنى) قيمة رقمية في مجموعة خلايا؟",
+            options: ["<span class='en-text'>MIN</span>", "<span class='en-text'>LOW</span>", "<span class='en-text'>SMALL</span>", "<span class='en-text'>BOTTOM</span>"],
+            correct: 0
+        }, {
+            id: 23,
+            weight: 2,
+            question: "ماذا تعني النقطتان الرأسيتان (:) في نطاق الخلايا مثل <span class='en-text'>A1:A10</span>؟",
+            options: ["تحديد الخلايا المفردة فقط (الأولى والأخيرة فقط).", "تعني نطاق متصل يمتد من الخلية الأولى حتى الخلية الأخيرة.", "تقسيم محتوى الخلية الأولى على الأخيرة.", "خطأ برمجي في تحديد النطاق."],
+            correct: 1
+        }, {
+            id: 24,
+            weight: 2,
+            question: "لماذا تعتبر الجداول الإلكترونية أفضل من الطرق اليدوية في الحسابات المالية؟",
+            options: ["لأنها ترتكب أخطاء بشرية أكثر.", "لأنها توفر دقة عالية وسرعة فائقة في تحديث النتائج.", "لأنها تحتاج وقتاً أطول للرسم.", "لأنها غير قابلة للتعديل."],
+            correct: 1
+        }, {
+            id: 25,
+            weight: 2,
+            question: "ما هو الرمز الذي تبدأ به أي معادلة أو دالة رياضية في برنامج إكسل؟",
+            options: ["رمز الزائد (+)", "رمز التساوي (=)", "رمز النسبة المئوية (%)", "رمز النقطتين (:)"],
+            correct: 1
+        }];
 
         let currentStage = 'main';
         let activeData = [];
@@ -585,18 +743,18 @@
         function renderQuestions() {
             const container = document.getElementById('questions-container');
             container.innerHTML = '';
-            
+
             activeData.forEach((q, index) => {
                 let card = document.createElement('div');
                 card.className = 'question-card';
-                card.style.animationDelay = `${index * 0.03}s`;
+                card.style.animationDelay = `${index * 0.02}s`;
                 card.id = `q-card-${currentStage}-${index}`;
 
                 let optionsHtml = '';
                 q.options.forEach((opt, optIndex) => {
                     optionsHtml += `
                         <label class="option-label" id="label-${currentStage}-${index}-${optIndex}">
-                            <input type="radio" name="question_${currentStage}_${index}" value="${optIndex}" onchange="checkProgress()">
+                            <input type="radio" name="question_${currentStage}_${index}" value="${optIndex}" onchange="updateProgress()">
                             <span>${opt}</span>
                         </label>
                     `;
@@ -605,7 +763,7 @@
                 card.innerHTML = `
                     <div class="q-title">
                         <span>السؤال ${index + 1}: ${q.question}</span>
-                        <span class="q-weight">${q.weight} علامة</span>
+                        <span class="q-weight">${q.weight} علامات</span>
                     </div>
                     <div class="options-list">
                         ${optionsHtml}
@@ -613,7 +771,10 @@
                 `;
                 container.appendChild(card);
             });
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
 
         function updateProgress() {
@@ -634,7 +795,7 @@
             });
 
             if (!allAnswered) {
-                alert("الرجاء الإجابة على جميع الأسئلة الظاهرة قبل المتابعة!");
+                alert("الرجاء الإجابة على جميع الأسئلة الظاهرة قبل الاعتماد!");
                 return;
             }
 
@@ -645,7 +806,7 @@
                 activeData.forEach((q, index) => {
                     const selected = document.querySelector(`input[name="question_${currentStage}_${index}"]:checked`);
                     const selectedVal = parseInt(selected.value);
-                    
+
                     if (selectedVal === q.correct) {
                         initialScore += q.weight;
                         document.getElementById(`label-${currentStage}-${index}-${selectedVal}`).classList.add('correct-ans');
@@ -660,8 +821,6 @@
                 });
 
                 document.getElementById('submitBtn').style.display = 'none';
-
-                // إظهار النتيجة الأولى ببطاقة إنجاز رقمية
                 showFirstReport(initialScore);
 
             } else {
@@ -669,7 +828,7 @@
                 activeData.forEach((q, index) => {
                     const selected = document.querySelector(`input[name="question_${currentStage}_${index}"]:checked`);
                     const selectedVal = parseInt(selected.value);
-                    
+
                     if (selectedVal === q.correct) {
                         reviewGainedScore += q.weight;
                         document.getElementById(`label-${currentStage}-${index}-${selectedVal}`).classList.add('correct-ans');
@@ -686,70 +845,93 @@
                 if (finalScore > 50) finalScore = 50;
 
                 document.getElementById('submitBtn').style.display = 'none';
-
-                // إظهار النتيجة النهائية (الأولى والثانية معاً)
                 showFinalReport(initialScore, finalScore);
             }
         }
 
         function showFirstReport(score) {
             const resultBox = document.getElementById('result-box');
-            document.getElementById('result-box-title').innerText = "النتيجة الأولى (قبل التدارك)";
-            document.getElementById('status-badge').innerText = "تم رصد النتيجة الأولى بنجاح";
-            
+            document.getElementById('result-box-title').innerText = "نتائج الاختبار الأساسية";
             document.getElementById('first-score-val').innerText = `${score} / 50`;
             document.getElementById('second-score-card').style.display = 'none';
 
-            if (wrongQuestionsList.length > 0) {
-                document.getElementById('score-text').innerText = `لقد أخطأت في ${wrongQuestionsList.length} أسئلة. يمكنك الآن خوض جولة تدارك الأخطاء لاسترجاع العلامات المفقودة!`;
-                document.getElementById('result-action-btn').innerText = "التوجه لجولة تدارك الأخطاء";
-                document.getElementById('result-action-btn').style.display = 'block';
-            } else {
-                document.getElementById('score-text').innerText = "مذهل! لقد أجبت على جميع الأسئلة بشكل صحيح تماماً من المحاولة الأولى!";
-                document.getElementById('result-action-btn').innerText = "إعادة الامتحان من جديد";
-                document.getElementById('result-action-btn').setAttribute('onclick', 'location.reload()');
+            if (score === 50) {
+                triggerConfetti();
+                document.getElementById('status-badge').innerText = "تم اجتياز الاختبار بنجاح تام"; // أو أي جملة تفضلها للعلامة الكاملة
+                document.getElementById('score-text').innerText = "عظااام! لقد حصلت على العلامة الكاملة من المرة الأولى!";
+                document.getElementById('btnRetryWrong').style.display = 'none';
+            } else if (wrongQuestionsList.length > 0) {
+                document.getElementById('status-badge').innerText = "تم رصد الإجابات والأخطاء";
+                document.getElementById('score-text').innerText = `لقد أخطأت في ${wrongQuestionsList.length} أسئلة (تم تحديد الإجابات الصحيحة باللون الأخضر).`;
+                document.getElementById('btnRetryWrong').style.display = 'block';
             }
 
             resultBox.style.display = 'block';
-            resultBox.scrollIntoView({ behavior: 'smooth' });
+            resultBox.scrollIntoView({
+                behavior: 'smooth'
+            });
         }
 
         function showFinalReport(first, final) {
             const resultBox = document.getElementById('result-box');
-            document.getElementById('result-box-title').innerText = "التقرير النهائي الشامل";
-            document.getElementById('status-badge').innerText = "تم إكمال جولة التدارك بنجاح";
-
+            document.getElementById('result-box-title').innerText = "التقرير النهائي بعد التدارك";
             document.getElementById('first-score-val').innerText = `${first} / 50`;
             document.getElementById('after-score-val').innerText = `${final} / 50`;
             document.getElementById('second-score-card').style.display = 'block';
 
-            document.getElementById('score-text').innerText = `تهانينا لك! لقد قمت بتدارك أخطائك وتحسين علامتك النهائية لتصبح ${final} من 50. عمل رائع يعكس حرصك على التميز والتفوق!`;
-            
-            const actionBtn = document.getElementById('result-action-btn');
-            actionBtn.innerText = "إعادة الامتحان من جديد";
-            actionBtn.setAttribute('onclick', 'location.reload()');
-            actionBtn.style.display = 'block';
+            if (final === 50) {
+                triggerConfetti();
+                document.getElementById('status-badge').innerText = "تم تدارك جميع الأخطاء بنجاح تام";
+                document.getElementById('score-text').innerText = "رائع جداً! نجحت في تدارك أخطائك والوصول للعلامة الكاملة!";
+            } else {
+                document.getElementById('status-badge').innerText = "تم إتمام جولة التدارك وتحديث النتيجة";
+                document.getElementById('score-text').innerText = `تم تحديث علامتك النهائية لتصبح ${final} من 50. عمل ممتاز!`;
+            }
 
+            document.getElementById('btnRetryWrong').style.display = 'none';
             resultBox.style.display = 'block';
-            resultBox.scrollIntoView({ behavior: 'smooth' });
+            resultBox.scrollIntoView({
+                behavior: 'smooth'
+            });
         }
 
-        function proceedToReviewOrRestart() {
-            if (wrongQuestionsList.length > 0 && currentStage === 'main') {
-                currentStage = 'review';
-                activeData = [...wrongQuestionsList];
-                
-                document.getElementById('section-subtitle').innerText = `جولة تدارك الأخطاء (${activeData.length} أسئلة)`;
-                document.getElementById('result-box').style.display = 'none';
-                
-                renderQuestions();
-                updateProgress();
 
-                const submitBtn = document.getElementById('submitBtn');
-                submitBtn.style.display = 'block';
-                submitBtn.innerText = "اعتماد إجابات التدارك وعرض النتيجة النهائية";
+        function startWrongReview() {
+            currentStage = 'review';
+            activeData = [...wrongQuestionsList];
+            document.getElementById('section-subtitle').innerText = `جولة تدارك الأخطاء (${activeData.length} أسئلة)`;
+            document.getElementById('result-box').style.display = 'none';
+            renderQuestions();
+            updateProgress();
+
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.style.display = 'block';
+            submitBtn.innerText = "اعتماد إجابات التدارك وعرض النتيجة الجديدة";
+        }
+
+        function exitQuizSession() {
+            alert("تم حفظ نتيجتك بنجاح. شكراً لك!");
+            location.reload();
+        }
+
+        function triggerConfetti() {
+            const container = document.getElementById('confettiContainer');
+            container.style.display = 'block';
+            container.innerHTML = '';
+            const colors = ['#00f3ff', '#b000ff', '#00ff66', '#ff0055', '#ffd700'];
+
+            for (let i = 0; i < 70; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'confetti';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = -10 + 'px';
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                particle.style.animationDelay = (Math.random() * 2) + 's';
+                container.appendChild(particle);
             }
         }
     </script>
 </body>
+
 </html>
